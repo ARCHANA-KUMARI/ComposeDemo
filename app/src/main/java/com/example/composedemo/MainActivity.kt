@@ -10,9 +10,12 @@ import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.font.FontStyle
 import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
+import androidx.compose.ui.unit.sp
 import com.example.composedemo.ui.theme.ComposeDemoTheme
 
 class MainActivity : ComponentActivity() {
@@ -36,7 +39,7 @@ class MainActivity : ComponentActivity() {
 fun Greeting(name: String, modifier: Modifier = Modifier) {
     Text(
         text = "Hello $name!",
-        modifier = modifier, fontStyle = FontStyle.Italic, fontWeight = FontWeight.Bold
+        modifier = modifier, fontStyle = FontStyle.Italic, fontWeight = FontWeight.Bold, color = Color.Red, fontSize = 36.sp, textAlign = TextAlign.Right
     )
 }
 
@@ -48,7 +51,7 @@ fun GreetingPreview() {
     }
 }
 
-@Preview(showBackground = true, name = "Preview 2" )
+@Preview(showBackground = true, name = "Preview 2" , widthDp = 300, heightDp = 500 )
 @Composable
 fun GreetingPreview2() {
     ComposeDemoTheme {
