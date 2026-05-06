@@ -5,20 +5,26 @@ import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
 import androidx.compose.foundation.Image
+import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.size
 import androidx.compose.material3.Button
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.ColorFilter
+import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontStyle
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
+import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.composedemo.ui.theme.ComposeDemoTheme
 
@@ -64,14 +70,25 @@ fun GreetingPreview2() {
 }
 
 
-@Preview(showBackground = true, name = "Preview 3" , widthDp = 300, heightDp = 500 )
+@Preview(showBackground = true, name = "Preview 3" , widthDp = 500, heightDp = 500 )
 @Composable
 fun GreetingPreview3() {
     Image(painter = painterResource(R.drawable.ic_launcher_background), "preview 3 background image", colorFilter = ColorFilter.tint(Color.Red) )
 }
 
-@Preview(showBackground = true, name = "Preview 4", widthDp = 300, heightDp = 500)
+@Preview(showBackground = true, name = "Preview 4", widthDp = 500, heightDp = 500)
 @Composable
 fun GreetingPreview4() {
-    Button(onClick = {}) { Text("Button text") }
+    Box(
+        modifier = Modifier.fillMaxWidth(),
+        contentAlignment = Alignment.CenterStart
+    ) {
+        Button(onClick = {}) { Text("Button text") }
+        Image(
+            painter = painterResource(R.drawable.leftarrow),
+            contentDescription = "back button",
+            contentScale = ContentScale.Fit,
+            modifier = Modifier.size(24.dp).align(Alignment.CenterEnd),
+            )
+    }
 }
