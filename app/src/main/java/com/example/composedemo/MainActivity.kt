@@ -1,11 +1,13 @@
 package com.example.composedemo
 
 import android.os.Bundle
+import android.util.Log
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
@@ -29,22 +31,44 @@ import androidx.compose.ui.unit.sp
 import com.example.composedemo.ui.theme.ComposeDemoTheme
 
 class MainActivity : ComponentActivity() {
+    private val TAG = "MainActivity"
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContent {
             ComposeDemoTheme {
                 Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
-                    Greeting(
+                   /* Greeting(
                         name = "Android Archana",
                         modifier = Modifier.padding(innerPadding)
-                    )
+                    )*/
+                    navigateToScreen()
                 }
             }
         }
     }
 }
 
+@Composable
+fun navigateToScreen() {
+    Column {
+        Button(onClick = { }) {
+            Text("Topic Demo: Row")
+        }
+        Button(onClick = { }) {
+            Text("Button 2")
+        }
+        Button(onClick = { }) {
+            Text("Button 3")
+        }
+    }
+}
+
+@Preview(showBackground = true)
+@Composable
+fun navigateToScreenPreview() {
+    navigateToScreen()
+}
 @Composable
 fun Greeting(name: String, modifier: Modifier = Modifier) {
     Text(
@@ -79,16 +103,19 @@ fun GreetingPreview3() {
 @Preview(showBackground = true, name = "Preview 4", widthDp = 500, heightDp = 500)
 @Composable
 fun GreetingPreview4() {
+
     Box(
         modifier = Modifier.fillMaxWidth(),
         contentAlignment = Alignment.CenterStart
     ) {
-        Button(onClick = {}) { Text("Button text") }
+        Button(onClick = { Log.i("Ar", "GreetingPreview4: ")}) { Text("Button text") }
         Image(
             painter = painterResource(R.drawable.leftarrow),
             contentDescription = "back button",
             contentScale = ContentScale.Fit,
-            modifier = Modifier.size(24.dp).align(Alignment.CenterEnd),
+            modifier = Modifier
+                .size(24.dp)
+                .align(Alignment.CenterEnd),
             )
     }
 }
