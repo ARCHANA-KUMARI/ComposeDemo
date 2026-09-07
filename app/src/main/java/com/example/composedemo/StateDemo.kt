@@ -8,6 +8,7 @@ import androidx.compose.material3.Button
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.MutableState
+import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
@@ -27,7 +28,9 @@ fun NotificationScreen() {
 
 @Composable
 fun NotificationCounterScreen() {
-    var count : MutableState<Int> = androidx.compose.runtime.remember { androidx.compose.runtime.mutableStateOf(0) }
+  //  var count : MutableState<Int> = androidx.compose.runtime.remember { androidx.compose.runtime.mutableStateOf(0) }
+    var count : MutableState<Int> =  rememberSaveable { androidx.compose.runtime.mutableStateOf(0) } // save data on configuration change also
+
     Column(
         verticalArrangement = Arrangement.Center,
         horizontalAlignment = Alignment.CenterHorizontally,
