@@ -7,6 +7,7 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.material3.Button
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.MutableState
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
@@ -26,15 +27,15 @@ fun NotificationScreen() {
 
 @Composable
 fun NotificationCounterScreen() {
-    var count = 0;
+    var count : MutableState<Int> = androidx.compose.runtime.remember { androidx.compose.runtime.mutableStateOf(0) }
     Column(
         verticalArrangement = Arrangement.Center,
         horizontalAlignment = Alignment.CenterHorizontally,
     ) {
-        Text(text = "Notification Count: $count")
+        Text(text = "Notification Count: ${count.value}")
         Button(onClick = {
-            count++
-            Log.d("StateDemo", "NotificationCounterScreen: $count")
+            count.value++
+           Log.d("StateDemo", "NotificationCounterScreen: $count")
         }) {
             Text(text = "Send Notification")
         }
