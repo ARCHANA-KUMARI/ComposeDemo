@@ -28,7 +28,7 @@ fun ScrollableColumnScreen() {
             .padding(16.dp),
         verticalArrangement = Arrangement.spacedBy(12.dp)
     ) {
-        Text("Title", style = MaterialTheme.typography.headlineMedium)
+        Text("Samples", style = MaterialTheme.typography.headlineMedium)
 
         repeat(30) { index ->
             Card(modifier = Modifier.fillMaxWidth()) {
