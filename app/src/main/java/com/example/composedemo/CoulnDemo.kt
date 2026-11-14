@@ -12,7 +12,8 @@ import androidx.compose.ui.unit.sp
 
 @Composable
 fun ColumnLyt() {
-    Column(verticalArrangement = androidx.compose.foundation.layout.Arrangement.SpaceEvenly) {
+    Column(verticalArrangement = androidx.compose.foundation.layout.Arrangement.Center,
+        horizontalAlignment = androidx.compose.ui.Alignment.CenterHorizontally) {
         Text(text = "A", fontSize = 24.sp)
         Text(text = "B", fontSize = 24.sp)
     }
