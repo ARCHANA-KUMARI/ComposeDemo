@@ -12,7 +12,7 @@ import androidx.compose.ui.unit.sp
 
 @Composable
 fun ColumnLyt() {
-    Column(verticalArrangement = androidx.compose.foundation.layout.Arrangement.spacedBy(8.dp)) {
+    Column(verticalArrangement = androidx.compose.foundation.layout.Arrangement.SpaceBetween) {
         Text(text = "A", fontSize = 24.sp)
         Text(text = "B", fontSize = 24.sp)
     }
