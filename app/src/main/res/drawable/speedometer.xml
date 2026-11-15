@@ -1,0 +1,31 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="200dp"
+    android:height="200dp"
+    android:viewportWidth="200"
+    android:viewportHeight="200">
+
+    <!-- Outer Circle -->
+    <path
+        android:fillColor="#00000000"
+        android:strokeColor="#FFFFFF"
+        android:strokeWidth="6"
+        android:pathData="M100,20 A80,80 0 1,1 99.9,20" />
+
+    <!-- Speed Arc -->
+    <path
+        android:fillColor="#00000000"
+        android:strokeColor="#00FF00"
+        android:strokeWidth="10"
+        android:pathData="M40,140 A70,70 0 0,1 160,140" />
+
+    <!-- Needle -->
+    <path
+        android:fillColor="#FF0000"
+        android:pathData="M100,100 L145,65 L103,103 Z" />
+
+    <!-- Center Circle -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M100,90 A10,10 0 1,1 99.9,90" />
+
+</vector>
